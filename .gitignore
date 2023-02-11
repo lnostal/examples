@@ -1,3 +1,10 @@
+.git/
+.vscode/
+/build
+main.dSYM
+.DS_Store
+
+# from template
 # Prerequisites
 *.d
 
