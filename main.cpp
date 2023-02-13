@@ -6,6 +6,6 @@ using namespace std;
 int main() {
 
     Patterns* p = new Patterns();
-    p->SingletoneIllustration();
-    
+    //p->SingletoneIllustration();
+    p->DecoratorIllustration();
 }
