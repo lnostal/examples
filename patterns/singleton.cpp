@@ -1,5 +1,3 @@
-//#include "singleton.h"
-
 /*
 
 Название:   singleton (одиночка)
@@ -21,13 +19,9 @@ protected:
     Singleton();
 };
 
-Singleton::Singleton()
-{
-}
+Singleton::Singleton(){}
 
-Singleton::~Singleton()
-{
-}
+Singleton::~Singleton(){}
 
 Singleton* Singleton::_instance = 0;
 
