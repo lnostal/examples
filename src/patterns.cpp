@@ -34,15 +34,15 @@ void Patterns::DecoratorIllustration(){
     BaseComponent* line = new TextLine(testString);
     std::cout << '\n' << line->draw() << std::endl;
 
-    std::cout << "\n\n\t❀ add border ❀\n";
+    std::cout << "\n\n\n\t❀ add border ❀\n";
     BaseComponent* lineWithBorder = new BorderedDecorator(new TextLine(testString), 'x');
     std::cout << '\n' << lineWithBorder->draw() << std::endl;
 
-    std::cout << "\n\n\t❀ add sparkles ❀\n";
+    std::cout << "\n\n\n\t❀ add sparkles ❀\n";
     BaseComponent* lineWithSparkles = new SparkleDecorator(line);
     std::cout << '\n' << lineWithSparkles->draw() << std::endl;
 
-    std::cout << "\n\n\t❀ combinations ❀\n";
+    std::cout << "\n\n\n\t❀ combinations ❀";
     BaseComponent* beautyLine = new BorderedDecorator(new SparkleDecorator(line), '~');
     std::cout << '\n' << std::right << '\n' << beautyLine->draw() << std::endl;
 

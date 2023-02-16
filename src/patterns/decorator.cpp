@@ -1,23 +1,3 @@
-#include <iostream>
-
-////// честно стыренная конвертилка для подсчета длины бордера
-////// https://stackoverflow.com/questions/10846953/c-substring-multi-byte-characters/34940745#34940745
-
-int lengthForBeauty(std::string originalString)
-{
-    int len = originalString.length();
-    int count = 0;
-    size_t origSize = originalString.size();
-
-    for (int byteIndex=0; byteIndex < origSize; byteIndex++){
-        if((originalString[byteIndex] & 0xc0) == 0x80) {
-            count +=1;
-        }
-            
-    }
-    return len - count/2;
-}
-
 /*
 
 Название:   decorator/wrapper (декоратор/обертка)
@@ -27,6 +7,8 @@ int lengthForBeauty(std::string originalString)
             с целью расширения функциональности
             
 */
+
+#include <iostream>
 
 /*************************************/
 /* базовый интерфейс для компонентов */
@@ -94,6 +76,7 @@ class BorderedDecorator : public Decorator{
 private:
     wchar_t border;
     std::string setBorder(std::string value);
+    int lengthForBeauty(std::string originalString);
 public:
     BorderedDecorator(BaseComponent*, wchar_t b);
     ~BorderedDecorator();
@@ -131,6 +114,23 @@ std::string BorderedDecorator::setBorder(std::string value){
     return finalString;
 }
 
+////// честно стыренная конвертилка для подсчета длины бордера
+////// https://stackoverflow.com/questions/10846953/c-substring-multi-byte-characters/34940745#34940745
+
+int BorderedDecorator::lengthForBeauty(std::string originalString)
+{
+    int len = originalString.length();
+    int count = 0;
+    size_t origSize = originalString.size();
+
+    for (int byteIndex=0; byteIndex < origSize; byteIndex++){
+        if((originalString[byteIndex] & 0xc0) == 0x80) {
+            count +=1;
+        }
+            
+    }
+    return len - count/2;
+}
 
 
 /***************************/
