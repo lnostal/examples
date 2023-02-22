@@ -23,11 +23,16 @@ endif()
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
-# главный сорс
-add_executable(examples src/main.cpp)
+# темы
+add_executable(tests src/tests.cpp)
+add_executable(patterns src/patterns.cpp)
+add_executable(threads src/threads.cpp)
 
 # библиотека для поддержки потоков
-target_link_libraries(examples PRIVATE Threads::Threads dl)
+target_link_libraries(tests PRIVATE Threads::Threads dl)
+target_link_libraries(patterns PRIVATE Threads::Threads dl)
+target_link_libraries(threads PRIVATE Threads::Threads dl)
+
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

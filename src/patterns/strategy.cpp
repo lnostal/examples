@@ -8,3 +8,22 @@
             клиентов, которые ими пользуются
             
 */
+
+class Strategy // стратегия в общем виде
+{
+private:
+    /* data */
+public:
+    Strategy();
+    ~Strategy();
+
+    virtual int Compose() = 0;
+};
+
+Strategy::Strategy(/* args */)
+{
+}
+
+Strategy::~Strategy()
+{
+}

@@ -9,6 +9,8 @@ public:
     ~Patterns();
     void SingletoneIllustration();
     void DecoratorIllustration();
+    void StrategyIllustration();
+    void TemplateMethodIllustration();
 };
 
 Patterns::Patterns(){}
@@ -50,3 +52,24 @@ void Patterns::DecoratorIllustration(){
     std::cout << '\n' << notSoBeautyLine->draw() << std::endl;
 }
 
+void Patterns::StrategyIllustration()
+{
+}
+
+void Patterns::TemplateMethodIllustration()
+{
+}
+
+
+
+using namespace std;
+
+int main() {
+
+    Patterns* p = new Patterns();
+    p->SingletoneIllustration();
+    cout << "------------------------------------------------------------" << endl;
+    p->DecoratorIllustration();
+    cout << "------------------------------------------------------------" << endl;
+    cout << "------------------------------------------------------------" << endl;
+}
