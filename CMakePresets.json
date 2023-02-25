@@ -1,0 +1,25 @@
+{
+    "version": 3,
+    "configurePresets": [
+      {
+        "name": "base",
+        "description": "Base preset for library developers",
+        "hidden": true
+      },
+      {
+        "name": "mac",
+        "description": "binary for mac",
+        "hidden": false,
+        "inherits": ["base"]
+      },
+      {
+        "name": "linux",
+        "description": "binary for linux",
+        "hidden": false,
+        "inherits": ["base"],
+        "cacheVariables": {
+            "CMAKE_TOOLCHAIN_FILE":"toolchains/tc_linux.cmake"
+        }
+      }
+    ]
+  }
