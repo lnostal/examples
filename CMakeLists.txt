@@ -28,6 +28,7 @@ find_package(Threads REQUIRED)
 add_executable(temp src/temp.cpp)
 add_executable(patterns src/patterns.cpp)
 add_executable(threads src/threads.cpp)
+add_executable(some_shit src/some_shit.cpp)
 
 # библиотека для поддержки потоков
 target_link_libraries(temp PRIVATE Threads::Threads dl)
